@@ -31,6 +31,8 @@
 		<jmx-prometheus-collector.version>0.12.0</jmx-prometheus-collector.version>
 		<commons-cli.version>1.4</commons-cli.version>
 		<test-container.version>0.19.0</test-container.version>
+		<kafka.version>2.6.0</kafka.version>
+		<javax-annotation-api.version>1.3.2</javax-annotation-api.version>
 	</properties>
 
 	<dependencies>
@@ -43,6 +45,26 @@
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-kafka-client</artifactId>
 			<version>${vertx.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.kafka</groupId>
+					<artifactId>kafka-clients</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.kafka</groupId>
+					<artifactId>kafka_2.12</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.12</artifactId>
+			<version>${kafka.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.vertx</groupId>
@@ -99,6 +121,19 @@
 			<groupId>io.jaegertracing</groupId>
 			<artifactId>jaeger-client</artifactId>
 			<version>${jaeger.version}</version>
+						<exclusions>
+				<exclusion>
+					<groupId>javax.annotation</groupId>
+					<artifactId>javax.annotation-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- org.apache.thrift:libthrift:0.13.0.redhat-00002 which is one of the Jaeger Client dependencies depends on unproductized version of this JAR.
+		We exclude it above and include it here to have the JAR included in productized version-->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>${javax-annotation-api.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.opentracing</groupId>
@@ -344,18 +379,97 @@
 			</build>
 		</profile>
 		<profile>
-			<id>httpbridge</id>
-			<properties>
-				<skipTests>false</skipTests>
-				<groups>httpbridge</groups>
-			</properties>
+		  <!-- Update redhat/licenses.xml-->
+			<id>update-licences</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.wildfly.maven.plugins</groupId>
+						<artifactId>licenses-plugin</artifactId>
+						<version>1.0.0</version>
+						<inherited>false</inherited>
+						<executions>
+							<execution>
+								<id>update-licenses-xml</id>
+								<goals>
+									<goal>insert-versions</goal>
+								</goals>
+								<phase>prepare-package</phase>
+								<configuration>
+									<sortByGroupIdAndArtifactId>true</sortByGroupIdAndArtifactId>
+									<licensesOutputFile>${project.basedir}/redhat/licenses/licenses.xml</licensesOutputFile>
+									<includedScopes>compile</includedScopes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
 		<profile>
-			<id>amqptbridge</id>
-			<properties>
-				<skipTests>false</skipTests>
-				<groups>amqptbridge</groups>
-			</properties>
+		  <!-- Render redhat/licenses.xml -> redhat/licenses.html -->
+		  	<id>render-licenses</id>
+			<build>
+				<plugins>
+					<!-- Create HTML (parameters: product, version) -->
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>xml-maven-plugin</artifactId>
+						<version>1.0.1</version>
+						<inherited>false</inherited>
+						<executions>
+							<execution>
+								<id>generate-licenses-html</id>
+								<goals>
+									<goal>transform</goal>
+								</goals>
+								<phase>prepare-package</phase>
+								<configuration>
+									<transformationSets>
+										<transformationSet>
+											<dir>${project.basedir}/redhat/licenses</dir>
+											<includes>
+												<include>licenses.xml</include>
+											</includes>
+											<stylesheet>${project.basedir}/redhat/templates/licenses.xsl</stylesheet>
+											<outputDir>${project.basedir}/redhat/licenses</outputDir>
+											<fileMappers>
+												<fileMapper implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+													<targetExtension>.html</targetExtension>
+												</fileMapper>
+											</fileMappers>
+											<parameters>
+												<parameter>
+													<name>product</name>
+													<value>${project.name}</value>
+												</parameter>
+												<parameter>
+													<name>version</name>
+													<value>${project.version}</value>
+												</parameter>
+											</parameters>
+										</transformationSet>
+									</transformationSets>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+                        <id>httpbridge</id>
+                        <properties>
+                                <skipTests>false</skipTests>
+                                <groups>httpbridge</groups>
+                        </properties>
+                </profile>
+                <profile>
+                        <id>amqptbridge</id>
+                        <properties>
+                                <skipTests>false</skipTests>
+                                <groups>amqptbridge</groups>
+                        </properties>
 		</profile>
 	</profiles>
 

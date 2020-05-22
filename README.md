@@ -6,10 +6,7 @@
 # Apache Kafka bridge
 
 This project provides a software component which acts as a bridge between different standard protocols and an [Apache Kafka](http://kafka.apache.org/) cluster.
-The available protocols are:
-
-* [AMQP 1.0 (Advanced Message Queuing Protocol)](https://www.amqp.org/)
-* [HTTP 1.1 (Hypertext Transfer Protocol)](https://tools.ietf.org/html/rfc2616)
+Currently, the [HTTP 1.1 (Hypertext Transfer Protocol)](https://tools.ietf.org/html/rfc2616) protocol is supported.
 
 It provides a different way to interact with Apache Kafka because the latter natively supports only a custom (proprietary) protocol. 
 Thanks to the bridge, all clients which can speak different standard protocols can connect to Apache Kafka cluster in order to send and receive messages to / from topics.
