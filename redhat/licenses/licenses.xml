@@ -4,7 +4,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
-      <version>2.9.9</version>
+      <version>2.10.2</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.10.0</version>
+      <version>2.10.2</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -64,34 +64,11 @@
     <dependency>
       <groupId>com.github.luben</groupId>
       <artifactId>zstd-jni</artifactId>
-      <version>1.4.3-1</version>
+      <version>1.4.4-7</version>
       <licenses>
         <license>
           <name>BSD 2-Clause License</name>
           <url>https://opensource.org/licenses/BSD-2-Clause</url>
-          <distribution>repo</distribution>
-        </license>
-      </licenses>
-    </dependency>
-    <dependency>
-      <groupId>com.github.spotbugs</groupId>
-      <artifactId>spotbugs-annotations</artifactId>
-      <version>4.0.1</version>
-      <licenses>
-        <license>
-          <name>GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1</name>
-          <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html</url>
-        </license>
-      </licenses>
-    </dependency>
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>jsr305</artifactId>
-      <version>3.0.2</version>
-      <licenses>
-        <license>
-          <name>The Apache Software License, Version 2.0</name>
-          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
           <distribution>repo</distribution>
         </license>
       </licenses>
@@ -156,9 +133,21 @@
       </licenses>
     </dependency>
     <dependency>
+      <groupId>commons-cli</groupId>
+      <artifactId>commons-cli</artifactId>
+      <version>1.4</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
-      <version>2.4</version>
+      <version>2.5</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -212,9 +201,33 @@
       </licenses>
     </dependency>
     <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-core</artifactId>
+      <version>1.1.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-prometheus</artifactId>
+      <version>1.3.9</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-buffer</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -225,7 +238,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -236,7 +249,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-dns</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -247,7 +260,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-http</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -258,7 +271,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-http2</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -269,7 +282,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-codec-socks</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -280,7 +293,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-common</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -291,7 +304,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-handler</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -302,7 +315,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-handler-proxy</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -313,7 +326,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-resolver</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -324,7 +337,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-resolver-dns</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -335,7 +348,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-transport</artifactId>
-      <version>4.1.48.Final</version>
+      <version>4.1.49.Final</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -404,9 +417,45 @@
       </licenses>
     </dependency>
     <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient</artifactId>
+      <version>0.6.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>io.prometheus</groupId>
+      <artifactId>simpleclient_common</artifactId>
+      <version>0.7.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>io.prometheus.jmx</groupId>
+      <artifactId>collector</artifactId>
+      <version>0.12.0</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
       <groupId>io.strimzi</groupId>
       <artifactId>kafka-oauth-client</artifactId>
-      <version>0.5.0</version>
+      <version>0.6.1</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -417,7 +466,7 @@
     <dependency>
       <groupId>io.strimzi</groupId>
       <artifactId>kafka-oauth-common</artifactId>
-      <version>0.5.0</version>
+      <version>0.6.1</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -488,7 +537,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-auth-common</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -505,7 +554,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-bridge-common</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -522,7 +571,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-config</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -535,7 +584,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -552,7 +601,24 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-kafka-client</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
+      <licenses>
+        <license>
+          <name>The Apache Software License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+        <license>
+          <name>Eclipse Public License - v 1.0</name>
+          <url>http://www.eclipse.org/legal/epl-v10.html</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-micrometer-metrics</artifactId>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -569,7 +635,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-proton</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -581,7 +647,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -598,7 +664,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web-api-contract</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -615,7 +681,7 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web-common</artifactId>
-      <version>3.9.0</version>
+      <version>3.9.3</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -671,18 +737,6 @@
       </licenses>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
-      <licenses>
-        <license>
-          <name>The Apache Software License, Version 2.0</name>
-          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-          <distribution>repo</distribution>
-        </license>
-      </licenses>
-    </dependency>
-    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.5</version>
@@ -697,7 +751,7 @@
     <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>kafka-clients</artifactId>
-      <version>2.4.0</version>
+      <version>2.6.0</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -707,9 +761,45 @@
       </licenses>
     </dependency>
     <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.13.3</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.13.3</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>2.13.3</version>
+      <licenses>
+        <license>
+          <name>Apache License, Version 2.0</name>
+          <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
       <groupId>org.apache.qpid</groupId>
       <artifactId>proton-j</artifactId>
-      <version>0.33.3</version>
+      <version>0.33.6</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -733,7 +823,7 @@
     <dependency>
       <groupId>org.bouncycastle</groupId>
       <artifactId>bcpkix-jdk15on</artifactId>
-      <version>1.62</version>
+      <version>1.65</version>
       <licenses>
         <license>
           <name>Bouncy Castle Licence</name>
@@ -755,15 +845,19 @@
       </licenses>
     </dependency>
     <dependency>
-      <groupId>org.jetbrains</groupId>
-      <artifactId>annotations</artifactId>
-      <version>13.0</version>
+      <groupId>org.hdrhistogram</groupId>
+      <artifactId>HdrHistogram</artifactId>
+      <version>2.1.10</version>
       <licenses>
         <license>
-          <name>The Apache Software License, Version 2.0</name>
-          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-          <distribution>repo</distribution>
-          <comments>A business-friendly OSS license</comments>
+          <name>Public Domain, per Creative Commons CC0</name>
+          <url>http://creativecommons.org/publicdomain/zero/1.0/</url>
+          <comments>* This code was Written by Gil Tene of Azul Systems, and released to the
+                * public domain, as explained at http://creativecommons.org/publicdomain/zero/1.0/</comments>
+        </license>
+        <license>
+          <name>BSD-2-Clause</name>
+          <url>https://opensource.org/licenses/BSD-2-Clause</url>
         </license>
       </licenses>
     </dependency>
@@ -792,7 +886,7 @@
     <dependency>
       <groupId>org.keycloak</groupId>
       <artifactId>keycloak-common</artifactId>
-      <version>10.0.0</version>
+      <version>11.0.2</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -804,7 +898,7 @@
     <dependency>
       <groupId>org.keycloak</groupId>
       <artifactId>keycloak-core</artifactId>
-      <version>10.0.0</version>
+      <version>11.0.2</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
@@ -814,9 +908,22 @@
       </licenses>
     </dependency>
     <dependency>
+      <groupId>org.latencyutils</groupId>
+      <artifactId>LatencyUtils</artifactId>
+      <version>2.0.3</version>
+      <licenses>
+        <license>
+          <name>Public Domain, per Creative Commons CC0</name>
+          <url>http://creativecommons.org/publicdomain/zero/1.0/</url>
+          <comments>* This code was Written by Gil Tene of Azul Systems, and released to the
+                * public domain, as explained at http://creativecommons.org/publicdomain/zero/1.0/</comments>
+        </license>
+      </licenses>
+    </dependency>
+    <dependency>
       <groupId>org.lz4</groupId>
       <artifactId>lz4-java</artifactId>
-      <version>1.6.0</version>
+      <version>1.7.1</version>
       <licenses>
         <license>
           <name>The Apache Software License, Version 2.0</name>
@@ -829,18 +936,6 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.21</version>
-      <licenses>
-        <license>
-          <name>MIT License</name>
-          <url>https://opensource.org/licenses/MIT</url>
-          <distribution>repo</distribution>
-        </license>
-      </licenses>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.18</version>
       <licenses>
         <license>
           <name>MIT License</name>
@@ -864,7 +959,7 @@
     <dependency>
       <groupId>org.yaml</groupId>
       <artifactId>snakeyaml</artifactId>
-      <version>1.24</version>
+      <version>1.26</version>
       <licenses>
         <license>
           <name>Apache License, Version 2.0</name>
