@@ -42,6 +42,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -160,12 +161,15 @@ public class Application {
      * @return instance of the MicrometerMetricsOptions on Vert.x
      */
     private static MicrometerMetricsOptions metricsOptions() {
+        HashSet hs = new HashSet();
+        hs.add(MetricsDomain.NAMED_POOLS);
+        hs.add(MetricsDomain.VERTICLES);
         return new MicrometerMetricsOptions()
                 .setPrometheusOptions(new VertxPrometheusOptions().setEnabled(true))
                 // define the labels on the HTTP server related metrics
                 .setLabels(EnumSet.of(Label.REMOTE, Label.LOCAL, Label.HTTP_PATH, Label.HTTP_METHOD, Label.HTTP_CODE))
                 // disable metrics about pool and verticles
-                .setDisabledMetricsCategories(EnumSet.of(MetricsDomain.NAMED_POOLS, MetricsDomain.VERTICLES))
+                .setDisabledMetricsCategories(hs)
                 .setJvmMetricsEnabled(true)
                 .setEnabled(true);
     }
